@@ -8,7 +8,7 @@ IF NOT EXIST %~dp0config\properties.bat (
 	ECHO @SET BINANCE_SECRET=XXXXXXYOURAPISECRETXXXXXXXXXXXX >> %~dp0config\properties.bat
 )
 CALL %~dp0config\properties.bat
-SET CLASSPATH=%~dp0target\classes;%~dp0config
+set CLASSPATH=%~dp0config;%~dp0target\classes
 FOR %%i IN ("%~dp0target\dependency\*.jar") do call :addcp %%i
 java dem2k.AppMain -key=%BINANCE_APIKEY% -sec=%BINANCE_SECRET% %*
 GOTO ende
