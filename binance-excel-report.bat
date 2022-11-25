@@ -1,7 +1,7 @@
 @ECHO OFF
 IF NOT EXIST %~dp0config\common.xlsx (
 	MKDIR %~dp0config 1>nul 2>&1
-	 COPY %~dp0target\classes\common.xlsx %~dp0config\common.xlsx 1>nul 2>&1
+	 COPY %~dp0target\classes\common.xlsx %~dp0config 1>nul 2>&1
 )
 IF NOT EXIST %~dp0config\properties.bat (
 	ECHO @SET BINANCE_APIKEY=XXXXXXXYOURAPIKEYXXXXXXXXXXXXXX >> %~dp0config\properties.bat
